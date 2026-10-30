@@ -1,0 +1,147 @@
+{
+  "focal": "Please Tell Me",
+  "p_fix": 5.0,
+  "beta": 0.5,
+  "outside": 0.3,
+  "thresh": 5.0,
+  "pairs": [
+    {
+      "pair": "Please Tell Me + The Housemaid",
+      "k": 1,
+      "真实 diversion (真值)": 26.09,
+      "frozen": 15.71,
+      "fullft": 2.5,
+      "anchored": 13.89
+    },
+    {
+      "pair": "Please Tell Me + The Ritual",
+      "k": 2,
+      "真实 diversion (真值)": 13.43,
+      "frozen": 12.12,
+      "fullft": 0.0,
+      "anchored": 12.12
+    },
+    {
+      "pair": "Please Tell Me + The Inmate",
+      "k": 3,
+      "真实 diversion (真值)": 31.34,
+      "frozen": 17.14,
+      "fullft": 3.33,
+      "anchored": 13.89
+    },
+    {
+      "pair": "Please Tell Me + The Serpent & ",
+      "k": 4,
+      "真实 diversion (真值)": 10.0,
+      "frozen": 16.67,
+      "fullft": 0.0,
+      "anchored": 14.93
+    },
+    {
+      "pair": "Please Tell Me + The Ashes & Th",
+      "k": 5,
+      "真实 diversion (真值)": 7.35,
+      "frozen": 10.61,
+      "fullft": 2.63,
+      "anchored": 12.12
+    },
+    {
+      "pair": "Please Tell Me + Court of Raven",
+      "k": 6,
+      "真实 diversion (真值)": 9.86,
+      "frozen": 13.24,
+      "fullft": 0.0,
+      "anchored": 14.49
+    },
+    {
+      "pair": "Please Tell Me + Dopamine Detox",
+      "k": 7,
+      "真实 diversion (真值)": 9.72,
+      "frozen": 9.59,
+      "fullft": 0.0,
+      "anchored": 9.46
+    },
+    {
+      "pair": "Please Tell Me + Don't Believe ",
+      "k": 8,
+      "真实 diversion (真值)": 9.72,
+      "frozen": 9.46,
+      "fullft": 0.82,
+      "anchored": 10.81
+    },
+    {
+      "pair": "Please Tell Me + The Art of Let",
+      "k": 9,
+      "真实 diversion (真值)": 10.0,
+      "frozen": 13.04,
+      "fullft": 0.83,
+      "anchored": 11.27
+    }
+  ],
+  "methods": {
+    "frozen": {
+      "mae_pp": 4.74,
+      "decision_errors": 0,
+      "n_mergers": 9,
+      "errors_detail": []
+    },
+    "fullft": {
+      "mae_pp": 13.04,
+      "decision_errors": 9,
+      "n_mergers": 9,
+      "errors_detail": [
+        {
+          "pair": "Please Tell Me + The Housemaid",
+          "true": 26.09,
+          "pred": 2.5
+        },
+        {
+          "pair": "Please Tell Me + The Ritual",
+          "true": 13.43,
+          "pred": 0.0
+        },
+        {
+          "pair": "Please Tell Me + The Inmate",
+          "true": 31.34,
+          "pred": 3.33
+        },
+        {
+          "pair": "Please Tell Me + The Serpent & ",
+          "true": 10.0,
+          "pred": 0.0
+        },
+        {
+          "pair": "Please Tell Me + The Ashes & Th",
+          "true": 7.35,
+          "pred": 2.63
+        },
+        {
+          "pair": "Please Tell Me + Court of Raven",
+          "true": 9.86,
+          "pred": 0.0
+        },
+        {
+          "pair": "Please Tell Me + Dopamine Detox",
+          "true": 9.72,
+          "pred": 0.0
+        },
+        {
+          "pair": "Please Tell Me + Don't Believe ",
+          "true": 9.72,
+          "pred": 0.82
+        },
+        {
+          "pair": "Please Tell Me + The Art of Let",
+          "true": 10.0,
+          "pred": 0.83
+        }
+      ]
+    },
+    "anchored": {
+      "mae_pp": 5.32,
+      "decision_errors": 0,
+      "n_mergers": 9,
+      "errors_detail": []
+    }
+  }
+}

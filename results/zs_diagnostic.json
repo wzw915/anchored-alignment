@@ -1,0 +1,144 @@
+{
+  "diagnostic": [
+    {
+      "spec": "title_ST",
+      "pearson": 0.2456,
+      "spearman": 0.3023,
+      "perm_p": 0.0166
+    },
+    {
+      "spec": "description_ST",
+      "pearson": 0.6407,
+      "spearman": 0.475,
+      "perm_p": 0.0002
+    },
+    {
+      "spec": "reviews_ST",
+      "pearson": 0.5115,
+      "spearman": 0.5827,
+      "perm_p": 0.0002
+    },
+    {
+      "spec": "reviews_ST_chunkmean",
+      "pearson": 0.4802,
+      "spearman": 0.5169,
+      "perm_p": 0.0002
+    },
+    {
+      "spec": "image_inceptionv3",
+      "pearson": 0.2037,
+      "spearman": 0.141,
+      "perm_p": 0.0526
+    },
+    {
+      "spec": "multi_text+image",
+      "pearson": 0.5244,
+      "spearman": 0.6125,
+      "perm_p": 0.0002
+    }
+  ],
+  "zero_shot": [
+    {
+      "heldout": "The Inmate",
+      "spec": "title_ST",
+      "tau": 0.2,
+      "rmse": 0.0838,
+      "n_obs": 9
+    },
+    {
+      "heldout": "The Inmate",
+      "spec": "description_ST",
+      "tau": 0.2,
+      "rmse": 0.0599,
+      "n_obs": 9
+    },
+    {
+      "heldout": "The Inmate",
+      "spec": "reviews_ST",
+      "tau": 0.2,
+      "rmse": 0.0805,
+      "n_obs": 9
+    },
+    {
+      "heldout": "The Inmate",
+      "spec": "reviews_ST_chunkmean",
+      "tau": 0.1,
+      "rmse": 0.0728,
+      "n_obs": 9
+    },
+    {
+      "heldout": "The Inmate",
+      "spec": "image_inceptionv3",
+      "tau": 1.0,
+      "rmse": 0.0976,
+      "n_obs": 9
+    },
+    {
+      "heldout": "The Inmate",
+      "spec": "multi_text+image",
+      "tau": 0.2,
+      "rmse": 0.0947,
+      "n_obs": 9
+    },
+    {
+      "heldout": "The Inmate",
+      "spec": "uniform",
+      "tau": null,
+      "rmse": 0.0964,
+      "n_obs": 9
+    },
+    {
+      "heldout": "The Ashes & The Star Cursed King",
+      "spec": "title_ST",
+      "tau": 0.2,
+      "rmse": 0.0558,
+      "n_obs": 9
+    },
+    {
+      "heldout": "The Ashes & The Star Cursed King",
+      "spec": "description_ST",
+      "tau": 0.5,
+      "rmse": 0.0549,
+      "n_obs": 9
+    },
+    {
+      "heldout": "The Ashes & The Star Cursed King",
+      "spec": "reviews_ST",
+      "tau": 0.2,
+      "rmse": 0.0741,
+      "n_obs": 9
+    },
+    {
+      "heldout": "The Ashes & The Star Cursed King",
+      "spec": "reviews_ST_chunkmean",
+      "tau": 0.2,
+      "rmse": 0.075,
+      "n_obs": 9
+    },
+    {
+      "heldout": "The Ashes & The Star Cursed King",
+      "spec": "image_inceptionv3",
+      "tau": 0.2,
+      "rmse": 0.0624,
+      "n_obs": 9
+    },
+    {
+      "heldout": "The Ashes & The Star Cursed King",
+      "spec": "multi_text+image",
+      "tau": 0.5,
+      "rmse": 0.0688,
+      "n_obs": 9
+    },
+    {
+      "heldout": "The Ashes & The Star Cursed King",
+      "spec": "uniform",
+      "tau": null,
+      "rmse": 0.0839,
+      "n_obs": 9
+    }
+  ],
+  "heldout_asins": [
+    "B0B1XQTZ1R",
+    "B0BCQZP4SX"
+  ]
+}

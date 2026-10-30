@@ -1,0 +1,13 @@
+# data & model weights are downloaded on demand (see REPRODUCE.md)
+data/
+cache/
+models/
+DeepLogitReplication-main/
+
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.idea/
+.vscode/
+*.docx
+*.log

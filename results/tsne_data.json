@@ -1,0 +1,5 @@
+{
+  "same_genre_cos_frozen": 0.1845,
+  "same_genre_cos_aligned": 0.0396,
+  "note": "同类目对平均余弦: 微调后下降即结构打散的量化证据"
+}

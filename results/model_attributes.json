@@ -1,0 +1,115 @@
+{
+  "kind": "attributes",
+  "spec": "attributes",
+  "hist": [
+    {
+      "k": 0,
+      "spec": "plain",
+      "aic": 40998.74222015709
+    },
+    {
+      "k": 1,
+      "spec": "price",
+      "aic": 41000.74741198645
+    },
+    {
+      "k": 1,
+      "spec": "year",
+      "aic": 41002.601349627
+    },
+    {
+      "k": 1,
+      "spec": "pages",
+      "aic": 40996.42261645853
+    },
+    {
+      "k": 1,
+      "spec": "genre_mystery",
+      "aic": 41002.732852596375
+    },
+    {
+      "k": 1,
+      "spec": "genre_scifi",
+      "aic": 41000.58818638876
+    },
+    {
+      "k": 2,
+      "spec": "price,year",
+      "aic": 41004.6110466017
+    },
+    {
+      "k": 2,
+      "spec": "price,pages",
+      "aic": 41000.84967706671
+    },
+    {
+      "k": 2,
+      "spec": "price,genre_mystery",
+      "aic": 41003.876766683985
+    },
+    {
+      "k": 2,
+      "spec": "price,genre_scifi",
+      "aic": 41004.75737335236
+    },
+    {
+      "k": 2,
+      "spec": "year,pages",
+      "aic": 41003.118765519685
+    },
+    {
+      "k": 2,
+      "spec": "year,genre_mystery",
+      "aic": 41005.79024434234
+    },
+    {
+      "k": 2,
+      "spec": "year,genre_scifi",
+      "aic": 41005.61258806114
+    },
+    {
+      "k": 2,
+      "spec": "pages,genre_mystery",
+      "aic": 40999.81728898857
+    },
+    {
+      "k": 2,
+      "spec": "pages,genre_scifi",
+      "aic": 41000.42253544755
+    },
+    {
+      "k": 2,
+      "spec": "genre_mystery,genre_scifi",
+      "aic": 41004.728094908656
+    }
+  ],
+  "rmse": 0.0751615458679624,
+  "mae": 0.05742735792088996,
+  "top1": 0.4,
+  "top3": 0.8,
+  "aic": 40996.42261645853,
+  "ll": -20485.211308229264,
+  "n_params": 13,
+  "randvars": {
+    "pages": "n"
+  },
+  "best_vars": [
+    "pages"
+  ],
+  "coeff": {
+    "product_id_3": 0.8697873916711817,
+    "product_id_4": 0.64823664332121,
+    "product_id_8": -0.6129198527714186,
+    "product_id_9": 0.7258477262804568,
+    "product_id_21": 0.11431075323380287,
+    "product_id_23": -0.7432548052811921,
+    "product_id_29": 0.21671969014901293,
+    "product_id_45": -0.45550881256539694,
+    "product_id_46": -0.00345541281492587,
+    "price": -0.011571685724203973,
+    "position": -0.0941593528332341,
+    "pages": -0.28096615544171116,
+    "sd.pages": 0.9484133942917371
+  },
+  "seconds": 336.5
+}

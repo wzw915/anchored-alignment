@@ -1,0 +1,102 @@
+{
+ "when": "2026-10-30T09:22:54",
+ "note": "独立重算，未 import 任何项目模块；期望值取自 results/*.json",
+ "A5_survey": {
+  "n_raw": 11328,
+  "steps": {
+   "去 pilot/test": 10775,
+   "理解检查1": 9860,
+   "理解检查2": 9344,
+   "签署同意": 9344,
+   "进度100%": 9265,
+   "已完成": 9265,
+   "时长>=60s": 9265
+  },
+  "n_final": 9265,
+  "expect": 9265,
+  "match": true
+ },
+ "A6_fingerprint": {
+  "DeepLogitReplication-main/data/experiment/survey_responses/ebook_survey_data_edited.csv": {
+   "exists": true,
+   "bytes": 18245813,
+   "gb": 0.018,
+   "sha256_head_8mb": "f69a6eae27a7713b",
+   "sha256_tail_8mb": "0bcbede073d6f10d",
+   "tail_line_intact": true
+  },
+  "DeepLogitReplication-main/data/experiment/books.csv": {
+   "exists": false
+  },
+  "data/amazon/Books_ratings.csv": {
+   "exists": true,
+   "bytes": 1689808538,
+   "gb": 1.69,
+   "sha256_head_8mb": "79a9c61ab362ba60",
+   "sha256_tail_8mb": "6f58878ae6edf6e8",
+   "tail_line_intact": true
+  },
+  "data/amazon/vg_Video_Games.jsonl": {
+   "exists": true,
+   "bytes": 2682948518,
+   "gb": 2.683,
+   "sha256_head_8mb": "c5c7c61b11449dbc",
+   "sha256_tail_8mb": "e677581494c00d76",
+   "tail_line_intact": true
+  },
+  "data/amazon/vg_meta_Video_Games.jsonl": {
+   "exists": true,
+   "bytes": 437375785,
+   "gb": 0.437,
+   "sha256_head_8mb": "1aba6a1cf1a975f4",
+   "sha256_tail_8mb": "92ac31c449498e5f",
+   "tail_line_intact": true
+  },
+  "data/amazon/dm_Digital_Music.jsonl": {
+   "exists": true,
+   "bytes": 78823304,
+   "gb": 0.079,
+   "sha256_head_8mb": "690cc12766ae38ca",
+   "sha256_tail_8mb": "65ca793c7df3173c",
+   "tail_line_intact": true
+  },
+  "data/amazon/meta_books_full.jsonl": {
+   "exists": true,
+   "bytes": 5050452475,
+   "gb": 5.05,
+   "sha256_head_8mb": "e0a8646d8d25e63c",
+   "sha256_tail_8mb": "621ef23f6896a185",
+   "tail_line_intact": false
+  }
+ },
+ "A1_A2_books": {
+  "covered": 175,
+  "rows_scanned": 29139329,
+  "rows_hit": 571791,
+  "users_touching_covered": 485137,
+  "users_in_graph_ge2": 58321,
+  "edges_recount": 11486,
+  "edges_derived": 6906,
+  "edges_match": true,
+  "common": 6906,
+  "only_derived": 0,
+  "only_recount": 4580,
+  "weight_le_recount": 6906,
+  "weight_over_recount": 0,
+  "weight_exact": 677,
+  "median_weight_derived": 2,
+  "median_weight_recount": 8
+ },
+ "A3_A4_vg": {
+  "n_rows": 4620473,
+  "n_bad_lines": 0,
+  "n_users_in_graph": 65037,
+  "users_in_graph_note": "评过>=2款目标游戏；文件级去重 2,753,806 由 vg_build_coreview.py 验证",
+  "n_edges_raw": 16090,
+  "expect_edges_raw": 16090,
+  "edges_raw_match": true,
+  "n_edges_kept": 10051,
+  "expect_edges_kept": 10051,
+  "edges_kept_match": true
+ }
+}

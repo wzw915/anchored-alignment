@@ -1,0 +1,96 @@
+{
+  "spec": "reviews_ST_chunkmean",
+  "d_out": 8,
+  "folds": [
+    {
+      "heldout": "B0BWNW9G8X",
+      "tau": 1.0,
+      "tau_frozen": 0.5,
+      "rmse_aligned": 0.1156,
+      "rmse_frozen": 0.0718,
+      "rmse_uniform": 0.0941
+    },
+    {
+      "heldout": "B09TWSRMCB",
+      "tau": 1.0,
+      "tau_frozen": 0.5,
+      "rmse_aligned": 0.1154,
+      "rmse_frozen": 0.0721,
+      "rmse_uniform": 0.0795
+    },
+    {
+      "heldout": "B09H7Q4B74",
+      "tau": 1.0,
+      "tau_frozen": 0.5,
+      "rmse_aligned": 0.0748,
+      "rmse_frozen": 0.0662,
+      "rmse_uniform": 0.0575
+    },
+    {
+      "heldout": "B0B1XQTZ1R",
+      "tau": 1.0,
+      "tau_frozen": 0.5,
+      "rmse_aligned": 0.1224,
+      "rmse_frozen": 0.0773,
+      "rmse_uniform": 0.0964
+    },
+    {
+      "heldout": "B09WRJJKXC",
+      "tau": 1.0,
+      "tau_frozen": 0.5,
+      "rmse_aligned": 0.0431,
+      "rmse_frozen": 0.076,
+      "rmse_uniform": 0.0948
+    },
+    {
+      "heldout": "B0BCQZP4SX",
+      "tau": 1.0,
+      "tau_frozen": 0.5,
+      "rmse_aligned": 0.0559,
+      "rmse_frozen": 0.072,
+      "rmse_uniform": 0.0839
+    },
+    {
+      "heldout": "B0BFFJRB2S",
+      "tau": 1.0,
+      "tau_frozen": 0.5,
+      "rmse_aligned": 0.0361,
+      "rmse_frozen": 0.0663,
+      "rmse_uniform": 0.0914
+    },
+    {
+      "heldout": "B098MHBF23",
+      "tau": 1.0,
+      "tau_frozen": 0.5,
+      "rmse_aligned": 0.0513,
+      "rmse_frozen": 0.0292,
+      "rmse_uniform": 0.086
+    },
+    {
+      "heldout": "B09WQ218GR",
+      "tau": 1.0,
+      "tau_frozen": 0.5,
+      "rmse_aligned": 0.1226,
+      "rmse_frozen": 0.0703,
+      "rmse_uniform": 0.1349
+    },
+    {
+      "heldout": "B09T66MSLN",
+      "tau": 1.0,
+      "tau_frozen": 0.5,
+      "rmse_aligned": 0.0895,
+      "rmse_frozen": 0.0446,
+      "rmse_uniform": 0.1095
+    }
+  ],
+  "aggregate": {
+    "rmse_aligned": 0.0827,
+    "rmse_frozen": 0.0646,
+    "rmse_uniform": 0.0928
+  },
+  "corr_full": {
+    "aligned": 0.9058,
+    "frozen": 0.6467,
+    "note": "全量训练后的相关含过拟合风险, 以 LOO RMSE 为准"
+  }
+}

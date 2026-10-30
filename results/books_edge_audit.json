@@ -1,0 +1,18 @@
+{
+ "covered": 175,
+ "rows_scanned": 29139329,
+ "rows_hit": 571791,
+ "users_touching_covered": 485137,
+ "users_in_graph_ge2": 58321,
+ "edges_recount": 11486,
+ "edges_derived": 6906,
+ "edges_match": true,
+ "common": 6906,
+ "only_derived": 0,
+ "only_recount": 4580,
+ "weight_le_recount": 6906,
+ "weight_over_recount": 0,
+ "weight_exact": 677,
+ "median_weight_derived": 2,
+ "median_weight_recount": 8
+}

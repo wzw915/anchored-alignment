@@ -1,0 +1,78 @@
+{
+  "results": {
+    "frozen": {
+      "rmse": 0.0731,
+      "kendall": 0.4457,
+      "top1": 0.3,
+      "top3": 0.9
+    },
+    "uniform": {
+      "rmse": 0.0948,
+      "kendall": NaN,
+      "top1": 0.1,
+      "top3": 0.3
+    },
+    "zca": {
+      "rmse": 0.0945,
+      "kendall": 0.18,
+      "top1": 0.4,
+      "top3": 0.9
+    },
+    "diag_metric": {
+      "rmse": 0.0867,
+      "kendall": 0.4127,
+      "top1": 0.3,
+      "top3": 0.7
+    },
+    "linear_probing": {
+      "rmse": 0.14,
+      "kendall": 0.1386,
+      "top1": 0.0,
+      "top3": 0.4
+    }
+  },
+  "fewshot": {
+    "1": {
+      "n_pairs": 0,
+      "rmse": NaN,
+      "kendall": NaN,
+      "top1": NaN,
+      "top3": NaN
+    },
+    "2": {
+      "n_pairs": 679,
+      "rmse": 0.1151,
+      "kendall": 0.3349,
+      "top1": 0.25,
+      "top3": 1.0
+    },
+    "3": {
+      "n_pairs": 432,
+      "rmse": 0.1446,
+      "kendall": 0.2579,
+      "top1": 0.4,
+      "top3": 0.6
+    },
+    "5": {
+      "n_pairs": 1603,
+      "rmse": 0.1363,
+      "kendall": 0.1381,
+      "top1": 0.2,
+      "top3": 0.5
+    },
+    "7": {
+      "n_pairs": 3705,
+      "rmse": 0.2045,
+      "kendall": 0.0811,
+      "top1": 0.4,
+      "top3": 0.6
+    },
+    "9": {
+      "n_pairs": 6590,
+      "rmse": 0.2959,
+      "kendall": 0.0537,
+      "top1": 0.1,
+      "top3": 0.3
+    }
+  }
+}

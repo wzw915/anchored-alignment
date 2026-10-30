@@ -1,0 +1,39 @@
+{
+ "edges_file": "copurchase_edges_full.json",
+ "dataset": "amazon_books_copurchase_uncapped",
+ "n_items": 175,
+ "n_edges": 11486,
+ "n_users_in_graph": 58321,
+ "semantic_vs_copurchase": {
+  "pearson": 0.2344,
+  "spearman": 0.2448
+ },
+ "methods": {
+  "frozen": {
+   "rmse": 0.0136,
+   "rmse_sd": 0.0088,
+   "kendall": 0.1595,
+   "kendall_sd": 0.0967,
+   "top3": 0.43
+  },
+  "a0_5": {
+   "rmse": 0.0134,
+   "rmse_sd": 0.0088,
+   "kendall": 0.2084,
+   "kendall_sd": 0.1269,
+   "top3": 0.42
+  },
+  "inf": {
+   "rmse": 0.0136,
+   "rmse_sd": 0.0091,
+   "kendall": 0.2579,
+   "kendall_sd": 0.1285,
+   "top3": 0.21
+  }
+ },
+ "tests": {
+  "rmse_frozen_vs_anchored_p": 1.0,
+  "rmse_frozen_vs_unbounded_p": 0.4955
+ },
+ "_provenance": "汇总数字重建自 src/ds2_full.log（首次运行在保存前因 KeyError 中断，已修复为 .get）；per_fold 明细缺失，主表结论不受影响"
+}

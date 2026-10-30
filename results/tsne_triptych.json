@@ -1,0 +1,17 @@
+{
+  "delta": 0.5,
+  "quant": {
+    "frozen": {
+      "same_genre_cos": 0.1845,
+      "corr_div": 0.6467
+    },
+    "fullft": {
+      "same_genre_cos": 0.0396,
+      "corr_div": 0.5148
+    },
+    "anchored": {
+      "same_genre_cos": 0.5474,
+      "corr_div": 0.7747
+    }
+  }
+}

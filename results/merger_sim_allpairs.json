@@ -1,0 +1,402 @@
+{
+ "mode": "all_pairs",
+ "n_pairs": 45,
+ "p_fix": 5.0,
+ "beta": 0.5,
+ "outside": 0.3,
+ "thresh": 5.0,
+ "pairs": [
+  {
+   "pair": "0-1",
+   "name": "Please Tell Me + The Housemaid",
+   "truth": 26.09,
+   "frozen": 15.71,
+   "fullft": 2.5,
+   "anchored": 13.89
+  },
+  {
+   "pair": "0-2",
+   "name": "Please Tell Me + The Ritual",
+   "truth": 13.43,
+   "frozen": 12.12,
+   "fullft": 0.0,
+   "anchored": 12.12
+  },
+  {
+   "pair": "0-3",
+   "name": "Please Tell Me + The Inmate",
+   "truth": 31.34,
+   "frozen": 17.14,
+   "fullft": 3.33,
+   "anchored": 13.89
+  },
+  {
+   "pair": "0-4",
+   "name": "Please Tell Me + The Serpent & ",
+   "truth": 10.0,
+   "frozen": 16.67,
+   "fullft": 0.0,
+   "anchored": 14.93
+  },
+  {
+   "pair": "0-5",
+   "name": "Please Tell Me + The Ashes & Th",
+   "truth": 7.35,
+   "frozen": 10.61,
+   "fullft": 2.63,
+   "anchored": 12.12
+  },
+  {
+   "pair": "0-6",
+   "name": "Please Tell Me + Court of Raven",
+   "truth": 9.86,
+   "frozen": 13.24,
+   "fullft": 0.0,
+   "anchored": 14.49
+  },
+  {
+   "pair": "0-7",
+   "name": "Please Tell Me + Dopamine Detox",
+   "truth": 9.72,
+   "frozen": 9.59,
+   "fullft": 0.0,
+   "anchored": 9.46
+  },
+  {
+   "pair": "0-8",
+   "name": "Please Tell Me + Don't Believe ",
+   "truth": 9.72,
+   "frozen": 9.46,
+   "fullft": 0.82,
+   "anchored": 10.81
+  },
+  {
+   "pair": "0-9",
+   "name": "Please Tell Me + The Art of Let",
+   "truth": 10.0,
+   "frozen": 13.04,
+   "fullft": 0.83,
+   "anchored": 11.27
+  },
+  {
+   "pair": "1-2",
+   "name": "The Housemaid + The Ritual",
+   "truth": 12.12,
+   "frozen": 12.5,
+   "fullft": 1.69,
+   "anchored": 10.94
+  },
+  {
+   "pair": "1-3",
+   "name": "The Housemaid + The Inmate",
+   "truth": 28.36,
+   "frozen": 17.65,
+   "fullft": 3.36,
+   "anchored": 14.29
+  },
+  {
+   "pair": "1-4",
+   "name": "The Housemaid + The Serpent & ",
+   "truth": 8.7,
+   "frozen": 17.19,
+   "fullft": 2.54,
+   "anchored": 15.38
+  },
+  {
+   "pair": "1-5",
+   "name": "The Housemaid + The Ashes & Th",
+   "truth": 7.46,
+   "frozen": 10.94,
+   "fullft": 3.57,
+   "anchored": 10.94
+  },
+  {
+   "pair": "1-6",
+   "name": "The Housemaid + Court of Raven",
+   "truth": 8.57,
+   "frozen": 13.64,
+   "fullft": 1.67,
+   "anchored": 13.43
+  },
+  {
+   "pair": "1-7",
+   "name": "The Housemaid + Dopamine Detox",
+   "truth": 8.45,
+   "frozen": 11.43,
+   "fullft": 1.67,
+   "anchored": 9.72
+  },
+  {
+   "pair": "1-8",
+   "name": "The Housemaid + Don't Believe ",
+   "truth": 8.45,
+   "frozen": 12.86,
+   "fullft": 1.67,
+   "anchored": 9.72
+  },
+  {
+   "pair": "1-9",
+   "name": "The Housemaid + The Art of Let",
+   "truth": 8.7,
+   "frozen": 13.43,
+   "fullft": 1.68,
+   "anchored": 10.14
+  },
+  {
+   "pair": "2-3",
+   "name": "The Ritual + The Inmate",
+   "truth": 16.92,
+   "frozen": 12.5,
+   "fullft": 0.84,
+   "anchored": 12.5
+  },
+  {
+   "pair": "2-4",
+   "name": "The Ritual + The Serpent & ",
+   "truth": 12.31,
+   "frozen": 11.67,
+   "fullft": 0.0,
+   "anchored": 13.33
+  },
+  {
+   "pair": "2-5",
+   "name": "The Ritual + The Ashes & Th",
+   "truth": 11.11,
+   "frozen": 6.67,
+   "fullft": 3.57,
+   "anchored": 6.67
+  },
+  {
+   "pair": "2-6",
+   "name": "The Ritual + Court of Raven",
+   "truth": 12.12,
+   "frozen": 13.11,
+   "fullft": 0.0,
+   "anchored": 11.29
+  },
+  {
+   "pair": "2-7",
+   "name": "The Ritual + Dopamine Detox",
+   "truth": 7.46,
+   "frozen": 7.58,
+   "fullft": 0.0,
+   "anchored": 9.09
+  },
+  {
+   "pair": "2-8",
+   "name": "The Ritual + Don't Believe ",
+   "truth": 7.46,
+   "frozen": 9.09,
+   "fullft": 0.0,
+   "anchored": 7.46
+  },
+  {
+   "pair": "2-9",
+   "name": "The Ritual + The Art of Let",
+   "truth": 6.15,
+   "frozen": 9.52,
+   "fullft": 1.68,
+   "anchored": 7.81
+  },
+  {
+   "pair": "3-4",
+   "name": "The Inmate + The Serpent & ",
+   "truth": 11.76,
+   "frozen": 17.19,
+   "fullft": 0.84,
+   "anchored": 15.38
+  },
+  {
+   "pair": "3-5",
+   "name": "The Inmate + The Ashes & Th",
+   "truth": 9.09,
+   "frozen": 10.94,
+   "fullft": 1.77,
+   "anchored": 10.94
+  },
+  {
+   "pair": "3-6",
+   "name": "The Inmate + Court of Raven",
+   "truth": 11.59,
+   "frozen": 13.64,
+   "fullft": 0.83,
+   "anchored": 14.93
+  },
+  {
+   "pair": "3-7",
+   "name": "The Inmate + Dopamine Detox",
+   "truth": 7.04,
+   "frozen": 11.27,
+   "fullft": 1.67,
+   "anchored": 11.11
+  },
+  {
+   "pair": "3-8",
+   "name": "The Inmate + Don't Believe ",
+   "truth": 10.0,
+   "frozen": 11.27,
+   "fullft": 1.67,
+   "anchored": 12.5
+  },
+  {
+   "pair": "3-9",
+   "name": "The Inmate + The Art of Let",
+   "truth": 10.29,
+   "frozen": 13.43,
+   "fullft": 0.83,
+   "anchored": 13.04
+  },
+  {
+   "pair": "4-5",
+   "name": "The Serpent &  + The Ashes & Th",
+   "truth": 23.44,
+   "frozen": 10.0,
+   "fullft": 4.46,
+   "anchored": 13.33
+  },
+  {
+   "pair": "4-6",
+   "name": "The Serpent &  + Court of Raven",
+   "truth": 28.79,
+   "frozen": 18.03,
+   "fullft": 0.0,
+   "anchored": 16.13
+  },
+  {
+   "pair": "4-7",
+   "name": "The Serpent &  + Dopamine Detox",
+   "truth": 7.14,
+   "frozen": 10.45,
+   "fullft": 0.0,
+   "anchored": 11.94
+  },
+  {
+   "pair": "4-8",
+   "name": "The Serpent &  + Don't Believe ",
+   "truth": 5.71,
+   "frozen": 11.94,
+   "fullft": 0.0,
+   "anchored": 11.76
+  },
+  {
+   "pair": "4-9",
+   "name": "The Serpent &  + The Art of Let",
+   "truth": 5.88,
+   "frozen": 10.94,
+   "fullft": 0.84,
+   "anchored": 10.77
+  },
+  {
+   "pair": "5-6",
+   "name": "The Ashes & Th + Court of Raven",
+   "truth": 23.08,
+   "frozen": 11.48,
+   "fullft": 4.42,
+   "anchored": 9.68
+  },
+  {
+   "pair": "5-7",
+   "name": "The Ashes & Th + Dopamine Detox",
+   "truth": 5.88,
+   "frozen": 7.58,
+   "fullft": 1.75,
+   "anchored": 9.09
+  },
+  {
+   "pair": "5-8",
+   "name": "The Ashes & Th + Don't Believe ",
+   "truth": 5.88,
+   "frozen": 9.09,
+   "fullft": 2.63,
+   "anchored": 7.46
+  },
+  {
+   "pair": "5-9",
+   "name": "The Ashes & Th + The Art of Let",
+   "truth": 4.55,
+   "frozen": 9.52,
+   "fullft": 2.65,
+   "anchored": 7.81
+  },
+  {
+   "pair": "6-7",
+   "name": "Court of Raven + Dopamine Detox",
+   "truth": 5.63,
+   "frozen": 10.29,
+   "fullft": 0.0,
+   "anchored": 11.76
+  },
+  {
+   "pair": "6-8",
+   "name": "Court of Raven + Don't Believe ",
+   "truth": 5.63,
+   "frozen": 11.76,
+   "fullft": 0.0,
+   "anchored": 11.59
+  },
+  {
+   "pair": "6-9",
+   "name": "Court of Raven + The Art of Let",
+   "truth": 5.8,
+   "frozen": 12.31,
+   "fullft": 0.0,
+   "anchored": 10.61
+  },
+  {
+   "pair": "7-8",
+   "name": "Dopamine Detox + Don't Believe ",
+   "truth": 32.35,
+   "frozen": 13.89,
+   "fullft": 1.64,
+   "anchored": 16.44
+  },
+  {
+   "pair": "7-9",
+   "name": "Dopamine Detox + The Art of Let",
+   "truth": 26.87,
+   "frozen": 17.65,
+   "fullft": 1.65,
+   "anchored": 17.14
+  },
+  {
+   "pair": "8-9",
+   "name": "Don't Believe  + The Art of Let",
+   "truth": 36.92,
+   "frozen": 15.94,
+   "fullft": 2.48,
+   "anchored": 15.49
+  }
+ ],
+ "methods": {
+  "frozen": {
+   "mae_pp": 5.39,
+   "TP": 44,
+   "FP": 1,
+   "FN": 0,
+   "TN": 0,
+   "n_pos_true": 44,
+   "n_pos_pred": 45,
+   "accuracy": 0.978
+  },
+  "fullft": {
+   "mae_pp": 11.36,
+   "TP": 0,
+   "FP": 0,
+   "FN": 44,
+   "TN": 1,
+   "n_pos_true": 44,
+   "n_pos_pred": 0,
+   "accuracy": 0.022
+  },
+  "anchored": {
+   "mae_pp": 5.29,
+   "TP": 44,
+   "FP": 1,
+   "FN": 0,
+   "TN": 0,
+   "n_pos_true": 44,
+   "n_pos_pred": 45,
+   "accuracy": 0.978
+  }
+ }
+}

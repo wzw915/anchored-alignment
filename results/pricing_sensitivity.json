@@ -1,0 +1,63 @@
+{
+ "beta": 0.5,
+ "sigma0": 0.6,
+ "outside_grid": [
+  0.1,
+  0.3,
+  0.5
+ ],
+ "margin_grid": [
+  0.3,
+  0.4,
+  0.5
+ ],
+ "scenario": "single-seller",
+ "loss_pct": {
+  "outside=0.1|margin=0.3": {
+   "frozen": 0.26,
+   "fullft": 34.03,
+   "anchored": 0.31
+  },
+  "outside=0.1|margin=0.4": {
+   "frozen": 0.25,
+   "fullft": 36.92,
+   "anchored": 0.17
+  },
+  "outside=0.1|margin=0.5": {
+   "frozen": 0.33,
+   "fullft": 42.54,
+   "anchored": 0.23
+  },
+  "outside=0.3|margin=0.3": {
+   "frozen": 0.33,
+   "fullft": 21.36,
+   "anchored": 0.28
+  },
+  "outside=0.3|margin=0.4": {
+   "frozen": 0.21,
+   "fullft": 25.45,
+   "anchored": 0.17
+  },
+  "outside=0.3|margin=0.5": {
+   "frozen": 0.22,
+   "fullft": 31.3,
+   "anchored": 0.22
+  },
+  "outside=0.5|margin=0.3": {
+   "frozen": 0.22,
+   "fullft": 15.6,
+   "anchored": 0.23
+  },
+  "outside=0.5|margin=0.4": {
+   "frozen": 0.14,
+   "fullft": 19.88,
+   "anchored": 0.12
+  },
+  "outside=0.5|margin=0.5": {
+   "frozen": 0.2,
+   "fullft": 25.47,
+   "anchored": 0.19
+  }
+ },
+ "rank_stable": false
+}

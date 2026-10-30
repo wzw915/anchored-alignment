@@ -1,0 +1,158 @@
+{
+  "spec": "reviews_ST_chunkmean",
+  "delta": 0.5,
+  "beta_base": 0.5,
+  "margin": 0.4,
+  "sigma0": 0.6,
+  "outside": 0.3,
+  "profit_baseline_price": 5.57,
+  "prices_p0": [
+    13.42,
+    17.11,
+    15.73,
+    14.95,
+    14.83,
+    18.31,
+    19.23,
+    13.41,
+    17.21,
+    14.38
+  ],
+  "results": {
+    "frozen": {
+      "rmse_vs_true": 0.0823,
+      "platform": {
+        "profit": 6.28,
+        "profit_opt": 6.28,
+        "loss_pct": 0.02,
+        "avg_price": 17.82,
+        "by_beta": {
+          "0.25": {
+            "loss_pct": 0.01,
+            "profit_opt": 7.97
+          },
+          "0.5": {
+            "loss_pct": 0.02,
+            "profit_opt": 6.28
+          },
+          "1.0": {
+            "loss_pct": 0.09,
+            "profit_opt": 5.77
+          }
+        }
+      },
+      "single": {
+        "loss_mean_pct": 0.21,
+        "loss_max_pct": 0.74,
+        "loss_each": [
+          0.04,
+          0.21,
+          0.04,
+          0.0,
+          0.74,
+          0.27,
+          0.34,
+          0.0,
+          0.17,
+          0.26
+        ],
+        "avg_price": 12.95,
+        "by_beta": {
+          "0.25": 0.24,
+          "0.5": 0.21,
+          "1.0": 1.24
+        }
+      }
+    },
+    "fullft": {
+      "rmse_vs_true": 0.1352,
+      "platform": {
+        "profit": 6.17,
+        "profit_opt": 6.28,
+        "loss_pct": 1.67,
+        "avg_price": 17.12,
+        "by_beta": {
+          "0.25": {
+            "loss_pct": 1.13,
+            "profit_opt": 7.97
+          },
+          "0.5": {
+            "loss_pct": 1.67,
+            "profit_opt": 6.28
+          },
+          "1.0": {
+            "loss_pct": 1.86,
+            "profit_opt": 5.77
+          }
+        }
+      },
+      "single": {
+        "loss_mean_pct": 25.45,
+        "loss_max_pct": 35.54,
+        "loss_each": [
+          23.84,
+          27.18,
+          31.8,
+          26.86,
+          26.63,
+          1.11,
+          35.54,
+          23.42,
+          30.77,
+          27.31
+        ],
+        "avg_price": 16.01,
+        "by_beta": {
+          "0.25": 16.22,
+          "0.5": 25.45,
+          "1.0": 15.12
+        }
+      }
+    },
+    "anchored": {
+      "rmse_vs_true": 0.0794,
+      "platform": {
+        "profit": 6.28,
+        "profit_opt": 6.28,
+        "loss_pct": 0.02,
+        "avg_price": 17.79,
+        "by_beta": {
+          "0.25": {
+            "loss_pct": 0.0,
+            "profit_opt": 7.97
+          },
+          "0.5": {
+            "loss_pct": 0.02,
+            "profit_opt": 6.28
+          },
+          "1.0": {
+            "loss_pct": 0.09,
+            "profit_opt": 5.77
+          }
+        }
+      },
+      "single": {
+        "loss_mean_pct": 0.17,
+        "loss_max_pct": 0.74,
+        "loss_each": [
+          0.04,
+          0.21,
+          0.04,
+          0.0,
+          0.74,
+          0.27,
+          0.34,
+          0.05,
+          0.0,
+          0.03
+        ],
+        "avg_price": 12.99,
+        "by_beta": {
+          "0.25": 0.21,
+          "0.5": 0.17,
+          "1.0": 0.89
+        }
+      }
+    }
+  }
+}
