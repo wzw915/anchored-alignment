@@ -51,9 +51,13 @@ byte-fingerprinted inputs (see [DATA_SOURCES.md](DATA_SOURCES.md)).
 
 | Dataset | Source | Size |
 |---|---|---|
-| Book choice experiment (main) | official replication package of Compiani, Morozov & Seiler (2026) | 9,265 respondents |
-| Amazon Books co-purchase | HF `McAuley-Lab/Amazon-Reviews-2023` | 29.1 M reviews, 2.49 M multi-book buyers |
-| Amazon Video Games co-review | same | 4.6 M reviews, 2.75 M reviewers |
+| Book choice experiment (main) | [Official replication package](https://github.com/ilyamorozov/DeepLogitReplication) of Compiani, Morozov & Seiler (2026), *Demand Estimation with Text and Image Data* | 9,265 respondents |
+| Amazon Books co-purchase | [McAuley-Lab/Amazon-Reviews-2023](https://huggingface.co/datasets/McAuley-Lab/Amazon-Reviews-2023) (`raw/meta_Books.jsonl`, `raw/review_Books.jsonl`) | 29.1 M reviews, 2.49 M multi-book buyers |
+| Amazon Video Games co-review | [McAuley-Lab/Amazon-Reviews-2023](https://huggingface.co/datasets/McAuley-Lab/Amazon-Reviews-2023) (`raw/meta_Video_Games.jsonl`, `raw/review_Video_Games.jsonl`) | 4.6 M reviews, 2.75 M reviewers |
+
+Download commands for every raw file (with a China-accessible mirror fallback)
+are in [REPRODUCE.md](REPRODUCE.md); byte counts and SHA-256 fingerprints of
+each source file are in [DATA_SOURCES.md](DATA_SOURCES.md).
 
 No synthetic data is used anywhere in the pipeline. The anonymized,
 aggregated survey matrix is included under `results/`; raw survey responses
