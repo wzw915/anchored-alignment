@@ -1,7 +1,7 @@
 # Anchored Alignment: Demand Substitution from Text and Image Embeddings
 
-Companion repository for the manuscript *"Zero-Shot Estimation of Product
-Substitution from Multimodal Embeddings via Anchored Alignment"*.
+Companion repository for the manuscript *"Anchored Alignment: Escaping the
+Cold-Start Trap in Multimodal Demand Estimation"*.
 
 Individual-level fine-tuning of pretrained embeddings destroys the global
 geometry that product-level demand tasks consume: on a book choice experiment,
@@ -43,21 +43,25 @@ pip install -r requirements.txt
 ```
 
 Full instructions, expected outputs and per-figure checkpoints are in
-[REPRODUCE.md](REPRODUCE.md). Raw external corpora (Amazon Reviews 2023,
-≈17 GB) are downloaded on demand; every downstream step is reproducible from
+[REPRODUCE.md](REPRODUCE.md). Raw external corpora (Amazon Reviews 2023) are
+downloaded on demand — about 10 GB for the subset actually used, 38 GB for the
+full raw files; every downstream step is reproducible from
 byte-fingerprinted inputs (see [DATA_SOURCES.md](DATA_SOURCES.md)).
 
 ## Data
 
 | Dataset | Source | Size |
 |---|---|---|
-| Book choice experiment (main) | [Official replication package](https://github.com/ilyamorozov/DeepLogitReplication) of Compiani, Morozov & Seiler (2026), *Demand Estimation with Text and Image Data* | 9,265 respondents |
-| Amazon Books co-purchase | [McAuley-Lab/Amazon-Reviews-2023](https://huggingface.co/datasets/McAuley-Lab/Amazon-Reviews-2023) (`raw/meta_Books.jsonl`, `raw/review_Books.jsonl`) | 29.1 M reviews, 2.49 M multi-book buyers |
-| Amazon Video Games co-review | [McAuley-Lab/Amazon-Reviews-2023](https://huggingface.co/datasets/McAuley-Lab/Amazon-Reviews-2023) (`raw/meta_Video_Games.jsonl`, `raw/review_Video_Games.jsonl`) | 4.6 M reviews, 2.75 M reviewers |
+| Book choice experiment (main) | [Official replication package](https://github.com/ilyamorozov/DeepLogitReplication) of Compiani, Morozov & Seiler (2026), *Demand Estimation with Text and Image Data* (`data/experiment/`) | 9,265 respondents |
+| Amazon Books co-purchase | [McAuley-Lab/Amazon-Reviews-2023](https://huggingface.co/datasets/McAuley-Lab/Amazon-Reviews-2023): [`raw/review_categories/Books.jsonl`](https://huggingface.co/datasets/McAuley-Lab/Amazon-Reviews-2023/resolve/main/raw/review_categories/Books.jsonl) (20.1 GB) + [`raw/meta_categories/meta_Books.jsonl`](https://huggingface.co/datasets/McAuley-Lab/Amazon-Reviews-2023/resolve/main/raw/meta_categories/meta_Books.jsonl) (14.7 GB) | 29.1 M reviews, 2.49 M multi-book buyers |
+| Amazon Video Games co-review | same corpus: [`raw/review_categories/Video_Games.jsonl`](https://huggingface.co/datasets/McAuley-Lab/Amazon-Reviews-2023/resolve/main/raw/review_categories/Video_Games.jsonl) (2.7 GB) + [`raw/meta_categories/meta_Video_Games.jsonl`](https://huggingface.co/datasets/McAuley-Lab/Amazon-Reviews-2023/resolve/main/raw/meta_categories/meta_Video_Games.jsonl) (437 MB) | 4.6 M reviews, 2.75 M reviewers |
 
-Download commands for every raw file (with a China-accessible mirror fallback)
-are in [REPRODUCE.md](REPRODUCE.md); byte counts and SHA-256 fingerprints of
-each source file are in [DATA_SOURCES.md](DATA_SOURCES.md).
+A byte-identical mirror of the same dataset is served at
+[hf-mirror.com](https://hf-mirror.com/datasets/McAuley-Lab/Amazon-Reviews-2023)
+(used for the downloads reported here; both hosts return identical file sizes).
+Download commands for every raw file are in [REPRODUCE.md](REPRODUCE.md);
+byte counts and SHA-256 fingerprints of each source file are in
+[DATA_SOURCES.md](DATA_SOURCES.md).
 
 No synthetic data is used anywhere in the pipeline. The anonymized,
 aggregated survey matrix is included under `results/`; raw survey responses

@@ -26,32 +26,59 @@ pip install -r requirements.txt
 
 ### 1.1 主数据集（18 MB，必需，秒级）
 
-书籍选择实验数据来自原论文复现包，放在 `DeepLogitReplication-main/data/experiment/`。
-若目录为空，从原论文的 replication package 取回，必须包含：
+书籍选择实验数据来自原论文的官方复现包
+（https://github.com/ilyamorozov/DeepLogitReplication ，`data/experiment/` 目录）。
+克隆或下载后放入本项目同级的 `DeepLogitReplication-main/` 目录，必须包含：
 
 ```
-survey_responses/ebook_survey_data_edited.csv   18.2 MB   11,328 行
+survey_responses/ebook_survey_data_edited.csv   18.2 MB   11,328 行   sha256(前4MB) 5d929b875a76…
 books/books.csv                                 40 KB     10 本书的属性
 books/book_covers/*.jpg                         10 张封面
+```
+
+```bash
+git clone https://github.com/ilyamorozov/DeepLogitReplication.git
+# 或下载 zip 解压为 DeepLogitReplication-main/
 ```
 
 ### 1.2 外部验证数据（可选，17 GB，慢）
 
 不做第 5 节的跨类目验证可以完全跳过这一步。
 
+四个原始文件全部来自 HuggingFace `McAuley-Lab/Amazon-Reviews-2023`
+（国内直连用镜像 `hf-mirror.com`，两个站点字节数一致）。BASE 变量统一写法：
+
 ```bash
-# Video Games：两个文件，字节级完整，约 3.1 GB
+BASE="https://hf-mirror.com/datasets/McAuley-Lab/Amazon-Reviews-2023/resolve/main/raw"
+# 直连可用时换成:
+# BASE="https://huggingface.co/datasets/McAuley-Lab/Amazon-Reviews-2023/resolve/main/raw"
+mkdir -p data/amazon
+```
+
+| 文件 | 大小 | 下载方式 |
+|---|---|---|
+| `raw/review_categories/Video_Games.jsonl` | 2.7 GB | 脚本（推荐） |
+| `raw/meta_categories/meta_Video_Games.jsonl` | 437 MB | 脚本（推荐） |
+| `raw/review_categories/Books.jsonl` | 20.1 GB | 脚本（流式转 CSV） |
+| `raw/meta_categories/meta_Books.jsonl` | 14.7 GB | curl（只取前 5.05 GB 前缀即可） |
+
+```bash
+# Video Games 两个文件：字节级完整（与服务端 Content-Length 相等）
 python src/vg_download2.py
 
-# Books 点评转 CSV：流式读 HF 原始 20 GB jsonl，边下边转，不占额外磁盘
+# Books 点评转 CSV：流式读 20 GB jsonl，边下边转，不占额外磁盘
 python src/amazon_books_reviews.py
 
-# Books 元数据：14.7 GB，慢且易断；只需要覆盖到 175 本书的前 5 GB 前缀即可
-# （本研究用的就是 5.05 GB 前缀，详见 DATA_SOURCES.md 第 2.1 节的说明）
+# Books 元数据：只取前 5.05 GB 前缀（本研究用的就是 5.05 GB 前缀，
+# 详见 DATA_SOURCES.md 第 2.1 节）。支持断点续传：中断后重跑同一命令接着下。
+curl -sL --retry 5 -C - -o data/amazon/meta_books_full.jsonl \
+     "$BASE/meta_categories/meta_Books.jsonl"
+# 校验：字节数应为 5,050,452,475；前 4 MB sha256 见 DATA_SOURCES.md
 ```
 
 `vg_download2.py` 带僵死检测（`--speed-limit`）与断点续传（先写 `.new` 再追加），
-中断后重跑会接着下。不要用 `curl -o` 直接覆盖目标文件，会把已下部分清零。
+中断后重跑会接着下。不要用 `curl -o` 直接覆盖目标文件，会把已下部分清零
+（上面 meta_Books 的 `-C -` 续传写法是安全的）。
 
 ---
 
@@ -162,6 +189,7 @@ python src/fig_external.py                    # 图 4
 
 ```bash
 python src/pricing_sim.py        # 定价：给 10 本书重新定价
+python src/pricing_replot.py     # 重绘 fig11（对数轴），只读 pricing_sim.json，秒级
 python src/merger_sim.py         # 合并：9 组两两合并
 python src/tsne_fig3.py          # 表示漂移 t-SNE
 python src/paper_figs.py         # 主图
@@ -225,11 +253,14 @@ python src/audit_provenance.py          # 全量：委托位图法 + VG 全量�
 
 ---
 
-## 9. 论文产出链
+## 9. 论文产出链（内部构建，非复现必需）
+
+以下两个脚本服务于论文稿的排版，**复现实验不需要跑**；`deliverable/` 目录
+（md 稿与成品 docx/tex）不在本仓库内，脚本路径按仓库根目录推导。
 
 ```bash
-# Word 版（课程提交，TNR 12pt、三线表、无封面）
-python src/build_paper_docx.py deliverable/英文小论文_v2.md deliverable/Anchored_Alignment_v3.2.docx
+# Word 版（TNR 12pt、三线表、无封面），输入为论文 md 稿
+python src/build_paper_docx.py deliverable/英文小论文_v2.md deliverable/Anchored_Alignment_v4.3.docx
 
 # LaTeX 投稿版（elsarticle，DSS 格式）
 python src/md_to_elsarticle.py        # 生成 deliverable/paper_elsarticle.tex
