@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """把 markdown 论文构建为投稿样式的 docx：
 - 无封面、无目录，正文直接从标题开始
-- 正文 12 pt Times New Roman，1.5 倍行距，两端对齐，段后 6 pt
+- 正文 12 pt Times New Roman，双倍行距，两端对齐，段后 6 pt
 - 一级/二级标题加粗，表格三线表（无竖线），图题居中 10 pt 斜体
 - 参考文献悬挂缩进
 用法: python src/build_paper_docx.py <input.md> <output.docx>
@@ -38,7 +38,7 @@ def base_style(doc):
     st.font.size = Pt(12)
     st.element.rPr.rFonts.set(qn("w:eastAsia"), FONT)
     pf = st.paragraph_format
-    pf.line_spacing = 1.5
+    pf.line_spacing = 2.0
     pf.space_before = Pt(0)
     pf.space_after = Pt(6)
 
@@ -46,25 +46,36 @@ def base_style(doc):
 SUB_RE = re.compile(r'(_[A-Za-z0-9]+)')
 
 
+URL_RE = re.compile(r'(https?://\S+)')
+
+
 def add_math_runs(p, text, size, bold=False, italic=False):
-    """把 X_j / δ_max / τ_eval 这类下标记号渲染成 Word 真下标。"""
-    for seg in SUB_RE.split(text):
-        if not seg:
+    """把 X_j / δ_max / τ_eval 这类下标记号渲染成 Word 真下标。
+    URL 内部的下划线是文件路径的一部分（如 meta_Books.jsonl），不做下标处理。"""
+    for u in URL_RE.split(text):
+        if not u:
             continue
-        if seg.startswith("_") and len(seg) > 1:
-            r = p.add_run(seg[1:])
+        if u.startswith(("http://", "https://")):
+            r = p.add_run(u)
             set_run_font(r, size, bold, italic)
-            r.font.subscript = True
-        else:
-            r = p.add_run(seg)
-            set_run_font(r, size, bold, italic)
+            continue
+        for seg in SUB_RE.split(u):
+            if not seg:
+                continue
+            if seg.startswith("_") and len(seg) > 1:
+                r = p.add_run(seg[1:])
+                set_run_font(r, size, bold, italic)
+                r.font.subscript = True
+            else:
+                r = p.add_run(seg)
+                set_run_font(r, size, bold, italic)
 
 
 def add_para(doc, text, size=12, bold=False, italic=False, align="just",
              space_after=6, indent=None, hanging=None, first_indent=None):
     p = doc.add_paragraph()
     pf = p.paragraph_format
-    pf.line_spacing = 1.5
+    pf.line_spacing = 2.0
     pf.space_after = Pt(space_after)
     pf.space_before = Pt(0)
     if indent is not None:
@@ -195,6 +206,9 @@ def main(md_path, out_path):
         if line.startswith("## "):
             title = line[3:].strip()
             in_refs = (title.lower() == "references")
+            # 参考文献与附录各起新页, 避免连续排版时附录看起来"插在参考文献中间"
+            if title.lower() == "references" or title.startswith("Appendix"):
+                doc.add_page_break()
             add_para(doc, title, size=13, bold=True, align="left", space_after=8)
             continue
         if line.startswith("### "):
@@ -212,8 +226,8 @@ def main(md_path, out_path):
                 add_para(doc, caption, size=10, italic=True, align="center", space_after=10)
             continue
         if line.startswith("- "):
-            add_para(doc, line[2:], size=12, align="left", space_after=2,
-                     indent=0.6, hanging=0.4)
+            add_para(doc, "\u2022\u2002" + line[2:], size=12, align="left",
+                     space_after=2, indent=0.9, hanging=0.5)
             continue
         if in_refs and re.match(r'^\[\d+\]', line):
             add_para(doc, line, size=11, align="just", space_after=4,

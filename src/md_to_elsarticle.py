@@ -156,9 +156,13 @@ def make_table(buf, caption_md):
 
 
 def main():
-    lines = open(SRC, encoding="utf-8").read().splitlines()
+    import sys
+    src = sys.argv[1] if len(sys.argv) > 1 else SRC
+    out_path = sys.argv[2] if len(sys.argv) > 2 else OUT
+    lines = open(src, encoding="utf-8").read().splitlines()
     out, highlights, abstract, refs = [], [], [], []
     pending_cap = None
+    in_item = False                      # 正文 itemize 块是否未闭合
     stage = "head"                       # head → highlights → abstract → body
 
     _i = 0
@@ -205,7 +209,13 @@ def main():
             continue
         if t.startswith("## "):
             title = re.sub(r"^\d+\.\s+", "", t[3:])
-            out.append("\\section{" + inline(title) + "}")
+            m_ap = re.match(r"^Appendix\s+[A-Z]\.\s+(.*)$", title)
+            if m_ap:
+                # 附录: \appendix 让编号自动变 A/B, 标题里不再重复 "Appendix A."
+                out.append("\\appendix")
+                out.append("\\section{" + inline(m_ap.group(1)) + "}")
+            else:
+                out.append("\\section{" + inline(title) + "}")
             out.append("")
             continue
         if t.startswith("### "):
@@ -249,8 +259,24 @@ def main():
             txt = re.sub(r"(https?://\S+)", r"\\url{\1}", m.group(2))
             refs.append((int(m.group(1)), inline(txt)))
             continue
-        out.append(inline(t))
+        if t.startswith("- "):
+            # 正文项目符号 -> itemize; 裸 URL 包 \url 以避开下划线转义错误
+            if not in_item:
+                out.append("\\begin{itemize}")
+                in_item = True
+            out.append("\\item " + inline(
+                re.sub(r"(https?://\S+)", r"\\url{\1}", t[2:])))
+            continue
+        if in_item:
+            out += ["\\end{itemize}", ""]
+            in_item = False
+        # 正文裸 URL 统一包 \url (可点击 + 允许断行, 避免 overfull hbox)
+        t_url = re.sub(r"(https?://[^\s,;)\]]+)", r"\\url{\1}", t)
+        out.append(inline(t_url))
         out.append("")
+
+    if in_item:
+        out += ["\\end{itemize}", ""]
 
     # ---------------- 组装 ----------------
     tex = [PREAMBLE,
@@ -272,8 +298,8 @@ def main():
         tex.append(f"\\bibitem{{ref{n}}} {txt}")
     tex += ["\\end{thebibliography}", "", "\\end{document}", ""]
 
-    open(OUT, "w", encoding="utf-8").write("\n".join(tex))
-    print(f"written {OUT}  ({len(tex)} lines, refs={len(refs)}, "
+    open(out_path, "w", encoding="utf-8").write("\n".join(tex))
+    print(f"written {out_path}  ({len(tex)} lines, refs={len(refs)}, "
           f"highlights={len(highlights)}, tables="
           f"{sum(1 for x in out if x == '\\\\begin{table}[htbp]')}, "
           f"figs={sum(1 for x in out if x.startswith('\\\\includegraphics'))})")
